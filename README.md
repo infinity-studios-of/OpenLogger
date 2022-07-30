@@ -13,9 +13,24 @@
 
 Install Open Logger with Gradle
 
+build.gradle (project)
 ```gradle
-  npm install my-project
-  cd my-project
+allprojects {
+    repositories {
+        ...
+        maven {
+            url 'https://jitpack.io'
+        }
+    }
+}
+```
+
+build.gradle (app)
+```gradle
+dependencies {
+    ...
+    implementation 'com.github.infinity-studios-of:OpenLogger:Tag'
+}
 ```
 
 
