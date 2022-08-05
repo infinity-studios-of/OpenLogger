@@ -2,18 +2,15 @@ apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 group = 'com.github.infinity-studios-of'
-version = '1.0.0'
+version = '1.0.1'
 
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
 
 repositories {
-    mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
 java {
@@ -32,9 +29,5 @@ publishing {
 wrapper {
     gradleVersion = "7.3.3"
     distributionType = Wrapper.DistributionType.ALL
-}
-
-test {
-    useJUnitPlatform()
 }
 
