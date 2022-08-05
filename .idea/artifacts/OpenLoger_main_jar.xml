@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="OpenLoger.main:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/OpenLoger_main_jar</output-path>
-    <root id="archive" name="OpenLoger.main.jar">
-      <element id="module-output" name="OpenLoger.main" />
-    </root>
-  </artifact>
-</component>
