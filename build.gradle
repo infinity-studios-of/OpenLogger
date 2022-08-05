@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 group = 'com.github.infinity-studios-of'
-version = '1.2'
+version = '1.0.0'
 
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
@@ -14,7 +14,6 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-    implementation 'com.google.guava:guava:29.0-jre'
 }
 
 java {
@@ -31,7 +30,7 @@ publishing {
 }
 
 wrapper {
-    gradleVersion = "6.4"
+    gradleVersion = "7.3.3"
     distributionType = Wrapper.DistributionType.ALL
 }
 
