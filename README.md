@@ -29,7 +29,7 @@ build.gradle (app)
 ```gradle
 dependencies {
     ...
-    implementation 'com.github.infinity-studios-of:OpenLogger:1.0'
+    implementation 'com.github.infinity-studios-of:OpenLogger:1.1'
 }
 ```
 
