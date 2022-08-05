@@ -57,14 +57,18 @@ Log.ce("CriticalError", "some info"); //logger stop when log critical error
 ### Trace logs
 Trace logs needed to track the progress of code execution. Open Logger allows you to implement a function call tracking system, also displaying in which thread they were called
 
-Example:
+#### Example:
 ```java
 class TestClass{
     public void foo(String arg){
-        Log.trace(Thread.currentThread(), "TestClass", "foo", new String[]{"arg", arg});
-        //do somthig
+        Log.trace(new LogObj(arg){});
+        //do something
       }
 }
+```
+#### Out:
+```
+[TRACE][05-08-22 18:28:27][Test worker:LogTest]  test(java.lang.String:arg0='value' )
 ```
 
 ### Memory Controll

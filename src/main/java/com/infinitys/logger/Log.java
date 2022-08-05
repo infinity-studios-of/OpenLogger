@@ -1,6 +1,8 @@
 package com.infinitys.logger;
 
 import java.io.File;
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -119,12 +121,28 @@ public class Log {
         }
     }
 
-    public static void trace(Thread th, String className, String funName, String[]... args){
+    public static void trace(LogObj obj){
         if (logging) {
+            Thread th = Thread.currentThread();
+            Class<LogObj> objClass = (Class<LogObj>) obj.getClass();
+            Method method = objClass.getEnclosingMethod();
+            Parameter[] params = method.getParameters();
+
+            String className = objClass.getEnclosingClass().getName();
+            String funName = obj.getClass().getEnclosingMethod().getName();
+            String[][] args = new String[params.length][3];
+
+            for (int i = 0; i < args.length; i++){
+                args[i][0] = params[i].getType().getName();
+                args[i][1] = params[i].getName();
+                args[i][2] = obj.values[i].toString();
+            }
+
+
             StringBuilder argsLine = new StringBuilder();
             if (args != null)
                 for (String[] arg : args) {
-                    argsLine.append(arg[0]).append("='").append(arg[1]).append("' ");
+                    argsLine.append(arg[0]).append(":").append(arg[1]).append("='").append(arg[2]).append("' ");
                 }
             String logLine = "[" + getDate() + " " + getTime() + "][" +th.getName() + ":" + className + "]  " + funName + "(" + argsLine + ")\n";
             traceLogString.append(logLine);

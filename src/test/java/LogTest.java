@@ -1,4 +1,5 @@
 import com.infinitys.logger.Log;
+import com.infinitys.logger.LogObj;
 import org.junit.jupiter.api.Test;
 
 public class LogTest {
@@ -8,10 +9,14 @@ public class LogTest {
         Log.i("Info", "some info");
         Log.e("Error", "some info");
         Log.d("Process", "some info");
-        Log.trace(Thread.currentThread(), "Class", "Function", new String[]{"arg1", "testValue"});
+        test("gwgew");
 
         Log.enableMemReporter();
 
         Log.ce("CriticalError", "some info");
+    }
+
+    public void test(String str){
+        Log.trace(new LogObj(str){});
     }
 }
