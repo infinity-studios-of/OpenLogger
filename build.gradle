@@ -1,12 +1,15 @@
 plugins {
     id 'java'
+    id 'maven'
+    id 'maven-publish'
 }
 
-group 'com.infinitys.logger'
-version '1.0'
+group 'com.github.infinity-studios-of'
+version '1.1'
 
 repositories {
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
